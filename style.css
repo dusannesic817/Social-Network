@@ -1,0 +1,286 @@
+
+.error{
+    color: red;
+    font-size: 10px;
+    
+    
+}
+
+.success{
+    color: green;
+}
+
+body{
+    /*background-color: #00ade7*/
+    background-image: url(images/bckg.jpg);
+}
+
+
+.main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 1000px;
+}
+
+.row{
+    
+    height: 600px;
+    border-radius: 10px;
+    
+    background-color: rgb(252, 252, 252);
+}
+
+.image-side{
+    background-image: url(images/sc.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+    
+
+}
+
+h1{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+
+.wrap{
+   /* border: 1px solid rgb(202, 65, 65);*/
+    margin-top: 30px;
+    margin-left: 15px;
+    
+}
+
+
+
+
+.main-but{
+    border: 1px solid #ececec;
+    font-size: 16px;
+    background-color: #ececec;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: .4s;
+
+}
+.main-but a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px 50px;
+      
+}
+
+.main-but:hover{
+    background: rgb(37,95,156);
+   
+}
+.main-but a:hover{
+    color: white;
+}
+
+
+
+
+.text-side{
+    position: relative;
+}
+
+.text-side img{
+    width: 300px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+
+}
+
+
+#reg{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+    
+}
+
+.input-box{
+    width: 330px;
+    box-sizing: border-box;
+   
+}
+
+.input-box header{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+    
+   
+}
+
+.input-field input{
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(99, 11, 180, 0.3);
+}
+
+
+.input-box label{
+    position: absolute;
+    top: -10px;
+    left: 4px;
+    color: rgb(189, 186, 186);
+    transition: .5s;
+    text-transform: capitalize;
+    
+    
+}
+
+
+.input-box span{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.input-field .input::before{
+    display: inline-block;
+}
+
+
+
+.input-field .submit{
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 5px;
+    background: #ececec;
+    transition: .4s;
+    margin-top: 15px;
+    
+    
+}
+
+.input-field .submit:hover{
+    background: rgb(37,95,156);
+    color: white;
+}
+
+.choose{
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.choose input[type="date"]{
+    padding-left: 20px;
+    width: 150px;
+    border: none;
+    background: #ececec;
+    border-radius: 10px;
+
+}
+
+#dob{
+    margin-left: 50px;
+}
+
+#dob label{
+    position: absolute;
+    top:350px;
+    left:75px;
+}
+
+#ch{
+    margin-left: 60px;
+}
+
+
+
+#cPhoto{
+    margin-left: 100px;
+}
+
+#cPhoto label{
+    position: absolute;
+    top:395px;
+    left:75px;
+}
+
+
+.f_u_buttons{
+    margin-left: 80px;
+}
+
+.f_u_but{
+    margin-right: 10px;
+   /* border: 1px solid black;*/
+    padding: 5px 10px 5px 10px;
+    background: #ececec;
+    
+   
+}
+
+.f_u_but a{
+    text-decoration: none;
+    display: block;
+    color: black;
+    
+}
+.f_u_but a:hover{
+    color: white;
+}
+
+
+.unknow{
+
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 70px;
+}
+
+#id{
+    text-decoration: none;
+   
+}
+
+
+#hello{
+    margin-top: -100px;
+}
+
+.follow{
+    text-decoration: none;
+    display: block;
+    background: #ececec;
+    text-align: center;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.follow:hover{
+    background: rgb(37,95,156);
+    color: white;
+    transition: .4s;
+}
+
+
+
