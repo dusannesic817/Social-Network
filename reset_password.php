@@ -4,11 +4,12 @@ require_once "connection.php";
 require_once "validation.php";
 session_start();
 
-if(!isset($_SESSION["id"]))
-{
+if(!isset($_SESSION["id"])){
+
     header("Location: index.php");
    
 }
+
 $sucMessage = $errMessage = "";
 $passwordNewError = $passwordOldError = $retypeError = "";
 
@@ -21,8 +22,7 @@ $row= $result->fetch_assoc();
 $password = $row['password'];
 
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   $passwordNew = $conn->real_escape_string($_POST['passwordNew']);
   $retype = $conn->real_escape_string($_POST['retype']);
@@ -32,34 +32,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   $passwordOldError = passwordValidation($passwordOld);
   $retypeError = passwordValidation($retype);
 
-  if($passwordNewError == "" && $passwordOldError == "" && $retypeError =="")
-  {
+  if($passwordNewError == "" && $passwordOldError == "" && $retypeError ==""){
+
     $q = "";
-    if (password_verify($passwordOld, $password))
-    {
-      if($passwordNew === $retype)
-      {
+
+    if (password_verify($passwordOld, $password)){
+
+      if($passwordNew === $retype){
+
         $passwordNew = password_hash($passwordNew, PASSWORD_DEFAULT);
         $q = "UPDATE `users`
         SET `password` = '$passwordNew' 
         WHERE `id` = $id;";
 
-        if($conn->query($q))
-        {
+        if($conn->query($q)){
+
           $sucMessage = "You have changed your profile";
-        }
-        else
-        {
-          // desila se greska u u pitu
+
+        }else{
+         
           $errMessage = "Error chaning password: " . $conn->error;
         }
-      }
-      else
-      {
+      }else{
+
         $retypeError = "You must enter two same passwords";
+
       }
-    } 
-    else
+    }else
     {
       $passwordOldError = "Invalid password";
     }
