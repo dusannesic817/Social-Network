@@ -13,9 +13,7 @@ require_once "header.php";
     if($_SERVER["REQUEST_METHOD"]=="GET" && isset($_GET["id"])){
 
         $id=$conn->real_escape_string($_GET["id"]);
-        //$id_user=$conn->real_escape_string($_GET["user_id"]);
-
-
+       
         $q="SELECT concat(`profiles`.first_name,' ',`profiles`.last_name) as osoba
         FROM profiles
         LEFT join followers ON followers.id_sender=profiles.id_user
