@@ -12,7 +12,6 @@ require_once "header.php";
 
         $id=$conn->real_escape_string($_GET["id"]);
         
-        
         $q="SELECT concat(`profiles`.first_name,' ',`profiles`.last_name) as osoba
         FROM profiles
         LEFT join followers ON followers.id_receiver=profiles.id_user
@@ -32,7 +31,6 @@ require_once "header.php";
 
 
 ?>
-
 
 <!doctype html>
 <html lang="en">

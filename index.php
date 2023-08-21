@@ -7,7 +7,6 @@
   $poruka="";
   if(isset($_GET["p"]) && $_GET["p"]=="ok"){
 
-   
     $poruka="You've succesfully register";
   // header("location:index.php");
 
@@ -50,13 +49,10 @@
 
 
 </head>
-
   <body class="vh-100 overflow-hidden">
     <div class="success">  <!-- zameniti nekim elementom iz boorstrapa-->
         <?php echo $poruka?>
     </div>
-
-
       <div class="holder">
         <div class="container main">
           <div class="row">

@@ -6,10 +6,6 @@ if(!isset($_SESSION["id"])){
     header("location: index.php");
 }
 
-
-
-
-
 if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])){  // da li sam dosao na stranicu get metodom i da li ima prosledjen parametar M
 
     $id=$conn->real_escape_string($_GET["id"]);
@@ -21,14 +17,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])){  // da li sam dos
 
     $result=$conn->query($q);
 
-    
-
     if($result->num_rows> 0){
-      
-
     while($row=$result->fetch_assoc()){
 
-    
     $firsName= $row["first_name"];
     $lastName= $row["last_name"];
     $username= $row["username"];
@@ -50,8 +41,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])){  // da li sam dos
 
          $following=$row1["following_number"];
         
-
-
     }
 
     $q2="SELECT COUNT(*) as `followers_number`
@@ -65,16 +54,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])){  // da li sam dos
         $row2= $result2->fetch_assoc(); 
             $followers=$row2["followers_number"];
         
-
-
     }
 
-    
-
-
 require_once "header.php";
-
-
 ?>
 
 <!DOCTYPE html>
@@ -90,57 +72,55 @@ require_once "header.php";
 </head>
 <body>
 
+    <div class="holder">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 image-side">
+                
+                </div>
+                <div class="col md-6 " id="reg">
+                    <div class="input-box">
+                        <table  class="tabela table table-hover">
+                            <tr>
+                                <td>First Name</td>
+                                <td><?php echo $firsName?></td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td><?php echo $lastName?></td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td><?php echo $username?></td>
+                            </tr>
+                            <tr>
+                                <td>Date of birth></td>
+                                <td><?php echo $birth?></td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td><?php echo $gender?></td>
+                            </tr>
 
-
-<div class="holder">
-    <div class="container main">
-        <div class="row">
-            <div class="col-md-6 image-side">
-            
-            </div>
-            <div class="col md-6 " id="reg">
-                <div class="input-box">
-                    <table  class="tabela table table-hover">
-                        <tr>
-                            <td>First Name</td>
-                            <td><?php echo $firsName?></td>
-                        </tr>
-                        <tr>
-                            <td>Last Name</td>
-                            <td><?php echo $lastName?></td>
-                        </tr>
-                        <tr>
-                            <td>Username</td>
-                            <td><?php echo $username?></td>
-                        </tr>
-                        <tr>
-                            <td>Date of birth></td>
-                            <td><?php echo $birth?></td>
-                        </tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td><?php echo $gender?></td>
-                        </tr>
-
-                        <tr>
-                            <td>Following</td>
-                            <td>
-                            <a href="following_name.php?id=<?php echo $id; ?>"><?php echo $following; ?></a>
-                        
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Followers</td>
-                            <td>
-                            <a href="followers_name.php?id=<?php echo $id; ?>"><?php echo $followers; ?></a>
-                            </td>
-                        </tr>
-                    </table>
+                            <tr>
+                                <td>Following</td>
+                                <td>
+                                <a href="following_name.php?id=<?php echo $id; ?>"><?php echo $following; ?></a>
+                            
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Followers</td>
+                                <td>
+                                <a href="followers_name.php?id=<?php echo $id; ?>"><?php echo $followers; ?></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <?php
 }
     ?>

@@ -54,12 +54,6 @@ require_once "validation.php";
             }
        }
 
-
-       //4.2) Ako postoji neko polje koje nije validno, ne raditi upit 
-       // nego vratiti korisnika na stricu i prikazati poruke
-
-     
-
     }
 
     

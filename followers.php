@@ -57,9 +57,6 @@
 
     }
 
-
-
-
     // odredoto koje druge koriniske prati logovan korisnik
     $upit1="SELECT `id_receiver` FROM `followers` WHERE `id_sender`=$id";
     $res1= $conn->query($upit1);

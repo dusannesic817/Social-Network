@@ -6,7 +6,6 @@
     require_once "connection.php";
     require_once "validation.php";
 
-
     $id=$_SESSION["id"];
     $firstName=$lastName =$dob= $gender =$image="";
     $firstNameError = $lastNameError= $dobError =$genderError=$imageError="";
@@ -64,15 +63,9 @@
        // header("location:index.php");
     }
 
-
-
-   
-
     $sucMessage="";
     $errMessage="";
     
-
-
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         $firstName=$conn->real_escape_string($_POST["first_name"]);
         $lastName=$conn->real_escape_string($_POST["last_name"]);
@@ -86,10 +79,8 @@
             $lastNameError=nameValidation($lastName);
             $genderError=genderValidation($gender);
             $dobError=dobValidation($dob);
-            
            // $imageError=imgValidation($image);
            
-
         //ako je sve u redu ubacujemo novi red u tabelu profiles
         if($firstNameError=="" && $lastNameError=="" && $genderError=="" && $dobError=="" &&  $imageError==""){
 

@@ -1,6 +1,5 @@
 <?php
     //Cim treba nekako da koristimo sesiju, mora ova f-ja da se pozove
-
     session_start();   // ova f-ja treba na pocetku (kao prva) da se pozove
 
     if(!isset($_SESSION["bad_logins"])){
@@ -59,8 +58,6 @@
 
             }
 
-           
-
         }
 
         //Ako je sve u uredu,loguj korisnika
@@ -82,7 +79,6 @@
 
   <title>Log in</title>
   <link rel="stylesheet" href="style.css">
-
 
 </head>
 
